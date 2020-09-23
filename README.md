@@ -4,7 +4,7 @@ npm:6.14.5
 Expo:3.22.1
 Xcode:11.3.1
 ## NOTE
-__Environemt you need to set up is__
+__Environment you need to set up is__
 - Installation of Node Package Manager
 - Installation of Expo-cli
 - Installation of Xcode
