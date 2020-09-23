@@ -17,4 +17,4 @@ __To start to check this app, input commands the folowing:__
 - cd memo
 - npm install
 - npm start 
-- Click Run on iOS simulator on a page automatically opened, then open Expo Client.
+- Click Run on iOS simulator on a page automatically opened, then open Expo Client on the simulator.
