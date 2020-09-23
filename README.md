@@ -8,7 +8,7 @@ __Environemt you need to set up is__
 - Installation of Node Package Manager
 - Installation of Expo-cli
 - Installation of Xcode
-## Start
+## Get started
 __To start to check this app, input commands with the folowing__
 - git clone https://github.com/kosuketakei/memo.git
 - cd memo
