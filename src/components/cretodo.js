@@ -10,7 +10,7 @@ export default function CreTodo({submitTodo}){
     return(
         <View style={styles.container}>
             <TextInput style={styles.input} placeholder="new todos..." onChangeText={value => change(value)} clearTextOnFocus={true} enablesReturnKeyAutomatically={true} />
-            <Button title="保存" onPress={()=> submitTodo(todo)} />
+            <Button title="Save" onPress={()=> submitTodo(todo)} />
         </View>
     )
 }

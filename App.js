@@ -4,10 +4,11 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
 import { NavigationContainer } from '@react-navigation/native';
 import Memo from "./src/memo"
 import Todo from "./src/todo"
-import Icon from "native-base"
+
 
 const Stack = createStackNavigator()
 
+//memoタブ
 function MemoStack(){
   return(
       <Stack.Navigator>
@@ -16,6 +17,7 @@ function MemoStack(){
   )
 }
 
+//todoタブ
 function TodoStack(){
   return(
       <Stack.Navigator>
@@ -24,6 +26,7 @@ function TodoStack(){
   )
 }
 
+//memoタブとtodoタブをbuttomに設置
 const Tab = createBottomTabNavigator()
 
 export default class App extends Component{
