@@ -5,9 +5,9 @@ Expo:3.22.1
 Xcode:11.3.1
 ## NOTE
 __Environemt you need to set up is__
-- Node Package Manager
-- Expo-cli
-- Xcode
+- Installation of Node Package Manager
+- Installation of Expo-cli
+- Installation of Xcode
 ## Start
 __To start to check this app, input commands with the folowing__
 - git clone https://github.com/kosuketakei/memo.git
