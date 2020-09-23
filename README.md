@@ -9,8 +9,9 @@ __Environemt you need to set up is__
 - Installation of Expo-cli
 - Installation of Xcode
 ## Get started
-__To start to check this app, input commands with the folowing__
+__To start to check this app, input commands the folowing:__
 - git clone https://github.com/kosuketakei/memo.git
 - cd memo
+- npm install
 - npm start 
-- click Run on iOS simulator on a page automatically opened
+- Click Run on iOS simulator on a page automatically opened, then open Expo Client.
