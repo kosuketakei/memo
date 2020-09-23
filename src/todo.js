@@ -1,14 +1,18 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import {SafeAreaView, StyleSheet, FlatList, Text, View, TouchableOpacity, AsyncStorage} from "react-native"
 import CreTodo from "./components/cretodo"
 import {Icon, Button, Left, Body, Right} from "native-base"
 
 function Todo(){
     const [todoList, setTodos] = useState([
-        {text:"やること1", key:"1"},
-        {text:"やること2", key:"2"},
-        {text:"やること3", key:"3"},
+        {text:"sample-todo1", key:"1"},
+        {text:"sample-todo2", key:"2"},
+        {text:"sample-todo3", key:"3"},
     ])
+
+    useEffect(()=>{
+        get()
+    }, []);
 
     const submitTodo = (todo) =>{
         if (todo !== ""){
@@ -26,6 +30,27 @@ function Todo(){
             return prev.filter(todoList => todoList.key != key)
         })
     };
+
+    //AsyncStorageでデータ保存
+    const save = async () =>{
+        try{
+            await AsyncStorage.setItem("key", JSON.stringify(todoList))
+        }catch(error){
+            alert(error)
+        }
+    };
+//AsyncStorageでデータ取得
+    const get = async ()=>{
+        try{
+            const data = await AsyncStorage.getItem("key")
+            const parsedData = JSON.parse(data)
+            if (parsedData !== null){
+               setTodos(parsedData)
+            }
+        }catch(error){
+            alert(error)
+        }
+    } 
     
     return(
         <SafeAreaView style={styles.container}>

@@ -5,12 +5,12 @@ import {Icon, Button, Right} from "native-base"
 
 function Memo (){
     const [memoList, setMemos] = useState([
-        {text:"sample1", key:"1"},
-        {text:"sample2", key:"2"},
-        {text:"sample3", key:"3"},
+        {text:"sample-memo1", key:"1"},
+        {text:"sample-memo2", key:"2"},
+        {text:"sample-memo3", key:"3"},
     ]);
 
-//初回のみ更新処理???????
+
     useEffect(()=>{
         get()
     }, []);
@@ -39,7 +39,6 @@ function Memo (){
     const save = async () =>{
         try{
             await AsyncStorage.setItem("key", JSON.stringify(memoList))
-            alert("successfully saved")
         }catch(error){
             alert(error)
         }

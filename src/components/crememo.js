@@ -10,7 +10,7 @@ export default function CreMemo ({submitMemo}){
     return(
         <View style={styles.container}>
             <TextInput style={styles.input} placeholder="new memo..." onChangeText={value => change(value)} clearTextOnFocus={true} enablesReturnKeyAutomatically={true} />
-            <Button title="保存" onPress={()=> submitMemo(memo)} />
+            <Button title="Save" onPress={()=> submitMemo(memo)} />
         </View>
     )
 }
