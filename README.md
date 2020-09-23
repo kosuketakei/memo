@@ -1,4 +1,4 @@
-# Memo App for Mobile created in ReactNative
+# Memo App for iOS Mobile created in ReactNative
 ## Environments
 npm:6.14.5
 Expo:3.22.1
