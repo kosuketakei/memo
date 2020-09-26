@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import {SafeAreaView, StyleSheet, FlatList, Text, View, TouchableOpacity, AsyncStorage} from "react-native"
+import {SafeAreaView, StyleSheet, FlatList, Text, View, TouchableOpacity, AsyncStorage, Keyboard} from "react-native"
 import CreTodo from "./components/cretodo"
 import {Icon, Button, Left, Body, Right} from "native-base"
 
@@ -24,6 +24,7 @@ function Todo(){
                 ]
             })
             save()//保存
+            Keyboard.dismiss()
         }
     }
 
