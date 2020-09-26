@@ -32,6 +32,7 @@ function Todo(){
         setTodos((prev) =>{
             return prev.filter(todoList => todoList.key != key)
         })
+        save()
     };
 
     //AsyncStorageでデータ保存

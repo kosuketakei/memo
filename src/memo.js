@@ -34,6 +34,7 @@ function Memo (){
         setMemos((prev) =>{
             return prev.filter(memoList => memoList.key != key)
         })
+        save()
     };
 
 //AsyncStorageでデータ保存
