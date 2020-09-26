@@ -2,6 +2,8 @@
 Memo app is extremely simple memo-todo app for iPhone.
 You can create and delete memos and todos very easily with simple look.
 Memo and todo lists are stored in your device. Therefore, no connections, processes are run very quickly. 
+
+I would not release it on App Store because it is for test, so you see it on the required environment.
 ## Environments
 npm:6.14.5
 Expo:3.22.1
@@ -11,7 +13,7 @@ __Environment you need to set up is__
 - Installation of Node Package Manager
 - Installation of Expo-cli
 - Installation of Xcode
-## Get started
+## Get started to see how this app works
 __To start to check this app, input commands the folowing:__
 - git clone https://github.com/kosuketakei/memo.git
 - cd memo
