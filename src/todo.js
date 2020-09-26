@@ -14,14 +14,16 @@ function Todo(){
         get()
     }, []);
 
+    //インプットしたテキストをtodoListに追加してAsyncStorageに保存
     const submitTodo = (todo) =>{
         if (todo !== ""){
-            setTodos((prev)=>{
+            setTodos((prevState)=>{
                 return[
                     {text:todo, key:Math.random().toString()},
-                    ...prev
+                    ...prevState
                 ]
             })
+            save()//保存
         }
     }
 
@@ -34,7 +36,7 @@ function Todo(){
     //AsyncStorageでデータ保存
     const save = async () =>{
         try{
-            await AsyncStorage.setItem("key", JSON.stringify(todoList))
+            await AsyncStorage.setItem("key2", JSON.stringify(todoList))
         }catch(error){
             alert(error)
         }
@@ -42,7 +44,7 @@ function Todo(){
 //AsyncStorageでデータ取得
     const get = async ()=>{
         try{
-            const data = await AsyncStorage.getItem("key")
+            const data = await AsyncStorage.getItem("key2")
             const parsedData = JSON.parse(data)
             if (parsedData !== null){
                setTodos(parsedData)
