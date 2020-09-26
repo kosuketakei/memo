@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import {StyleSheet, FlatList, TouchableOpacity, Text, View, SafeAreaView, AsyncStorage} from "react-native"
+import {StyleSheet, FlatList, TouchableOpacity, Text, View, SafeAreaView, AsyncStorage, Keyboard} from "react-native"
 import CreMemo from "./components/crememo"
 import {Icon, Button, Right} from "native-base"
 
@@ -18,13 +18,14 @@ function Memo (){
 //インプットしたテキストをmemoListに追加してAsyncStorageに保存
     const submitMemo = (memo)=>{
        if (memo !== ""){
-            setMemos((prev)=>{
+            setMemos((prevState)=>{
                 return[
                     {text:memo, key:Math.random().toString()},
-                    ...prev
+                    ...prevState
                 ]
             })
             save()//保存
+            Keyboard.dismiss()
         }
     };
 
@@ -33,12 +34,13 @@ function Memo (){
         setMemos((prev) =>{
             return prev.filter(memoList => memoList.key != key)
         })
+        save()
     };
 
 //AsyncStorageでデータ保存
     const save = async () =>{
         try{
-            await AsyncStorage.setItem("key", JSON.stringify(memoList))
+            await AsyncStorage.setItem("key1", JSON.stringify(memoList))
         }catch(error){
             alert(error)
         }
@@ -46,7 +48,7 @@ function Memo (){
 //AsyncStorageでデータ取得
     const get = async ()=>{
         try{
-            const data = await AsyncStorage.getItem("key")
+            const data = await AsyncStorage.getItem("key1")
             const parsedData = JSON.parse(data)
             if (parsedData !== null){
                setMemos(parsedData)

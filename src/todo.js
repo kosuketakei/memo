@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import {SafeAreaView, StyleSheet, FlatList, Text, View, TouchableOpacity, AsyncStorage} from "react-native"
+import {SafeAreaView, StyleSheet, FlatList, Text, View, TouchableOpacity, AsyncStorage, Keyboard} from "react-native"
 import CreTodo from "./components/cretodo"
 import {Icon, Button, Left, Body, Right} from "native-base"
 
@@ -14,14 +14,17 @@ function Todo(){
         get()
     }, []);
 
+    //インプットしたテキストをtodoListに追加してAsyncStorageに保存
     const submitTodo = (todo) =>{
         if (todo !== ""){
-            setTodos((prev)=>{
+            setTodos((prevState)=>{
                 return[
                     {text:todo, key:Math.random().toString()},
-                    ...prev
+                    ...prevState
                 ]
             })
+            save()//保存
+            Keyboard.dismiss()
         }
     }
 
@@ -29,12 +32,13 @@ function Todo(){
         setTodos((prev) =>{
             return prev.filter(todoList => todoList.key != key)
         })
+        save()
     };
 
     //AsyncStorageでデータ保存
     const save = async () =>{
         try{
-            await AsyncStorage.setItem("key", JSON.stringify(todoList))
+            await AsyncStorage.setItem("key2", JSON.stringify(todoList))
         }catch(error){
             alert(error)
         }
@@ -42,7 +46,7 @@ function Todo(){
 //AsyncStorageでデータ取得
     const get = async ()=>{
         try{
-            const data = await AsyncStorage.getItem("key")
+            const data = await AsyncStorage.getItem("key2")
             const parsedData = JSON.parse(data)
             if (parsedData !== null){
                setTodos(parsedData)
