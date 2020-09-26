@@ -1,12 +1,14 @@
 import React, {useState} from "react"
-import {StyleSheet, View, TextInput, Button,} from "react-native"
+import {StyleSheet, View, TextInput, Button} from "react-native"
 
 
 export default function CreMemo ({submitMemo}){
     const [memo, setMemo] = useState("")
+
     const change = (value) =>{
         setMemo(value)
     }
+
     return(
         <View style={styles.container}>
             <TextInput style={styles.input} placeholder="new memo..." onChangeText={value => change(value)} clearTextOnFocus={true} enablesReturnKeyAutomatically={true} />
