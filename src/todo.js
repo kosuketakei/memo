@@ -9,10 +9,15 @@ function Todo(){
         {text:"sample-todo2", key:"2"},
         {text:"sample-todo3", key:"3"},
     ])
+    
 
     useEffect(()=>{
         get()
-    }, []);
+    }, [setTodos]);
+
+    useEffect(()=>{
+        save()
+    })
 
     //インプットしたテキストをtodoListに追加してAsyncStorageに保存
     const submitTodo = (todo) =>{
