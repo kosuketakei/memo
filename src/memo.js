@@ -13,7 +13,12 @@ function Memo (){
 
     useEffect(()=>{
         get()
-    }, []);
+    }, [setMemos]);
+
+    useEffect(()=>{
+        save()
+    })
+    
 
 //インプットしたテキストをmemoListに追加してAsyncStorageに保存
     const submitMemo = (memo)=>{
@@ -45,7 +50,7 @@ function Memo (){
             alert(error)
         }
     };
-//AsyncStorageでデータ取得
+//AsyncStorageでデータ取得。stateに代入
     const get = async ()=>{
         try{
             const data = await AsyncStorage.getItem("key1")
@@ -79,6 +84,7 @@ function Memo (){
     )
     
 }
+
 export default Memo
 
 
