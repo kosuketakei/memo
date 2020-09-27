@@ -1,5 +1,7 @@
+import { Text } from "native-base";
 import React, {useState} from "react";
-import {View, TextInput, StyleSheet, Button} from "react-native";
+import {View, TextInput, StyleSheet, TouchableOpacity} from "react-native";
+
 
 export default function CreTodo({submitTodo}){
     const [todo, setTodo] = useState("")
@@ -10,7 +12,9 @@ export default function CreTodo({submitTodo}){
     return(
         <View style={styles.container}>
             <TextInput style={styles.input} placeholder="new todos..." onChangeText={value => change(value)} clearTextOnFocus={true} enablesReturnKeyAutomatically={true} />
-            <Button title="Save" onPress={()=> submitTodo(todo)} />
+            <TouchableOpacity style={styles.save} onPress={()=> submitTodo(todo)} >
+                <Text style={styles.text}>Save</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -18,6 +22,7 @@ export default function CreTodo({submitTodo}){
 const styles = StyleSheet.create({
     container:{
         backgroundColor:"#fff",
+        alignItems:"center",
     },
     input:{
         width:350,
@@ -27,7 +32,20 @@ const styles = StyleSheet.create({
         paddingVertical:20,
         borderColor: 'black',
         borderWidth: 1,
-        borderStyle:"dashed",
     },
+    save:{
+        alignItems:"center",
+        justifyContent:"center",
+        borderColor:"#007AFF",
+        borderWidth:1,
+        borderRadius:10,
+        paddingVertical:17,
+        paddingHorizontal:10,
+        width:200,
+    },
+    text:{
+        color:"#007AFF",
+        fontSize:15,
+    }
 
 })

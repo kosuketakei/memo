@@ -118,10 +118,4 @@ const styles = StyleSheet.create({
         marginLeft:5,
         backgroundColor:"#fff"
     },
-    a:{
-        flex:1,
-        marginTop:30,
-        borderColor:"black",
-        backgroundColor:"orange",
-    }
 })

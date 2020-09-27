@@ -60,6 +60,13 @@ function Todo(){
             alert(error)
         }
     } 
+
+    const changeBG = (key) =>{
+        setTodos((prev) =>{
+            return prev.filter(todoList => todoList.style.changeBG)
+        })
+        save()
+    }
     
     return(
         <SafeAreaView style={styles.container}>
@@ -68,7 +75,7 @@ function Todo(){
                 <FlatList data={todoList} renderItem={({item}) =>(
                     <TouchableOpacity style={styles.itemList} >
                         <Left>
-                            <Button style={styles.checkButton}>
+                            <Button style={styles.checkButton} >
                                 <Icon name="checkmark-circle-outline" style={{fontSize:20, color:"green"}}/>
                             </Button>
                         </Left>
@@ -118,6 +125,9 @@ const styles = StyleSheet.create({
     },
     trashButton:{
         backgroundColor:"#fff"
+    },
+    changeBG:{
+        backgroundColor:"green"
     }
     
 })
