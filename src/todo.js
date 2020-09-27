@@ -6,12 +6,13 @@ import {Icon, Button, Left, Body, Right} from "native-base";
 
 function Todo(){
     const [todoList, setTodos] = useState([
-        {text:"sample-todo1", key:"1"},
-        {text:"sample-todo2", key:"2"},
-        {text:"sample-todo3", key:"3"},
+        {text:"sample-todo1", key:"1", checked:false},
+        {text:"sample-todo2", key:"2", checked:false},
+        {text:"sample-todo3", key:"3", checked:false},
     ])
-    
 
+    
+    
     useEffect(()=>{
         get()
     }, [setTodos]);
@@ -25,7 +26,7 @@ function Todo(){
         if (todo !== ""){
             setTodos((prevState)=>{
                 return[
-                    {text:todo, key:Math.random().toString()},
+                    {text:todo, key:Math.random().toString(), checked:false},
                     ...prevState
                 ]
             })
@@ -62,13 +63,6 @@ function Todo(){
         }
     } 
 
-    const changeBG = (key) =>{
-        setTodos((prev) =>{
-            return prev.filter(todoList => todoList.style.changeBG)
-        })
-        save()
-    }
-    
     return(
         <SafeAreaView style={styles.container}>
             <CreTodo submitTodo={submitTodo} />
@@ -77,7 +71,7 @@ function Todo(){
                     {todoList.map(item=>(
                         <View key={item.key} style={styles.itemList}>
                             <Left>
-                            <Button style={styles.checkButton} >
+                            <Button style={styles.checkButton}>
                                 <Icon name="checkmark-circle-outline" style={{fontSize:20, color:"green"}}/>
                             </Button>
                         </Left>

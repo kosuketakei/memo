@@ -11,7 +11,6 @@ function Memo (){
         {text:"sample-memo3", key:"3"},
     ]);
 
-
     useEffect(()=>{
         get()
     }, [setMemos]);
