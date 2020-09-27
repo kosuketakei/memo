@@ -1,5 +1,5 @@
-import React, {useState} from "react"
-import {View, TextInput, StyleSheet, Button} from "react-native"
+import React, {useState} from "react";
+import {View, TextInput, StyleSheet, Button} from "react-native";
 
 export default function CreTodo({submitTodo}){
     const [todo, setTodo] = useState("")
