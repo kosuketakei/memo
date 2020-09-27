@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
-import {StyleSheet, FlatList, TouchableOpacity, Text, View, SafeAreaView, AsyncStorage, Keyboard} from "react-native";
+import {StyleSheet, FlatList, Text, View, SafeAreaView, AsyncStorage, Keyboard} from "react-native";
 import CreMemo from "./components/crememo";
 import {Icon, Button, Right} from "native-base";
+
 
 function Memo (){
     const [memoList, setMemos] = useState([
@@ -63,21 +64,19 @@ function Memo (){
         }
     } 
  
-
-
     return(
         <SafeAreaView style={styles.container}>
             <CreMemo submitMemo={submitMemo} />
             <View style={styles.list}>
                 <FlatList data={memoList} renderItem={({item})=>(
-                    <TouchableOpacity style={styles.itemList}>
+                    <View style={styles.itemList}>
                         <Text style={styles.text}>{item.text}</Text>
                         <Right>
                             <Button style={styles.button} onPress={()=>delMemo(item.key)}>
                                 <Icon name="trash" style={{fontSize:25, color:"gray"}}/>
                             </Button>
                         </Right>
-                    </TouchableOpacity>
+                    </View>
                 )}/>
             </View>
         </SafeAreaView>
@@ -118,10 +117,4 @@ const styles = StyleSheet.create({
         marginLeft:5,
         backgroundColor:"#fff"
     },
-    a:{
-        flex:1,
-        marginTop:30,
-        borderColor:"black",
-        backgroundColor:"orange",
-    }
 })

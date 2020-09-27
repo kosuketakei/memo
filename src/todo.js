@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
-import {SafeAreaView, StyleSheet, FlatList, Text, View, TouchableOpacity, AsyncStorage, Keyboard} from "react-native";
+import {SafeAreaView, StyleSheet, Text, View, AsyncStorage, Keyboard, ScrollView} from "react-native";
 import CreTodo from "./components/cretodo";
 import {Icon, Button, Left, Body, Right} from "native-base";
+
 
 function Todo(){
     const [todoList, setTodos] = useState([
@@ -60,15 +61,23 @@ function Todo(){
             alert(error)
         }
     } 
+
+    const changeBG = (key) =>{
+        setTodos((prev) =>{
+            return prev.filter(todoList => todoList.style.changeBG)
+        })
+        save()
+    }
     
     return(
         <SafeAreaView style={styles.container}>
             <CreTodo submitTodo={submitTodo} />
             <View style={styles.list}>
-                <FlatList data={todoList} renderItem={({item}) =>(
-                    <TouchableOpacity style={styles.itemList} >
-                        <Left>
-                            <Button style={styles.checkButton}>
+                <ScrollView>
+                    {todoList.map(item=>(
+                        <View key={item.key} style={styles.itemList}>
+                            <Left>
+                            <Button style={styles.checkButton} >
                                 <Icon name="checkmark-circle-outline" style={{fontSize:20, color:"green"}}/>
                             </Button>
                         </Left>
@@ -80,8 +89,9 @@ function Todo(){
                                 <Icon name="trash" style={{fontSize:20, color:"gray"}}/>
                             </Button>
                         </Right>
-                    </TouchableOpacity>
-                )}/>
+                        </View>
+                    ))}
+                </ScrollView>
             </View>
         </SafeAreaView>
     )
@@ -118,6 +128,9 @@ const styles = StyleSheet.create({
     },
     trashButton:{
         backgroundColor:"#fff"
+    },
+    changeBG:{
+        backgroundColor:"green"
     }
     
 })
