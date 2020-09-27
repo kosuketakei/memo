@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react"
-import {StyleSheet, FlatList, TouchableOpacity, Text, View, SafeAreaView, AsyncStorage, Keyboard} from "react-native"
-import CreMemo from "./components/crememo"
-import {Icon, Button, Right} from "native-base"
+import React, {useState, useEffect} from "react";
+import {StyleSheet, FlatList, TouchableOpacity, Text, View, SafeAreaView, AsyncStorage, Keyboard} from "react-native";
+import CreMemo from "./components/crememo";
+import {Icon, Button, Right} from "native-base";
 
 function Memo (){
     const [memoList, setMemos] = useState([

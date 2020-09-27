@@ -1,9 +1,11 @@
-import React, {Component} from "react"
-import {createStackNavigator} from "@react-navigation/stack"
+import React, {Component} from "react";
+import {createStackNavigator} from "@react-navigation/stack";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
 import { NavigationContainer } from '@react-navigation/native';
-import Memo from "./src/memo"
-import Todo from "./src/todo"
+import {MaterialCommunityIcons} from "react-native-vector-icons";
+import {FontAwesome5} from "react-native-vector-icons";
+import Memo from "./src/memo";
+import Todo from "./src/todo";
 
 
 const Stack = createStackNavigator()
@@ -37,8 +39,10 @@ export default class App extends Component{
           activeTintColor: 'tomato',
           inactiveTintColor: 'black',
           }}>
-          <Tab.Screen name="MemoStack" component={MemoStack} options={{title:"Memo"}}/>
-          <Tab.Screen name="TodoStack" component={TodoStack} options={{title:"Todo"}}/>
+          <Tab.Screen name="MemoStack" component={MemoStack} options={{tabBarLabel:"Memo", tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons  name="notebook" color={color} size={size} /> )}} />
+          <Tab.Screen name="TodoStack" component={TodoStack} options={{tabBarLabel:"Todo", tabBarIcon: ({ color, size }) => (
+            <FontAwesome5  name="tasks" color={color} size={size} /> )}}/>
         </Tab.Navigator>
       </NavigationContainer>
     )

@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react"
-import {SafeAreaView, StyleSheet, FlatList, Text, View, TouchableOpacity, AsyncStorage, Keyboard} from "react-native"
-import CreTodo from "./components/cretodo"
-import {Icon, Button, Left, Body, Right} from "native-base"
+import React, {useState, useEffect} from "react";
+import {SafeAreaView, StyleSheet, FlatList, Text, View, TouchableOpacity, AsyncStorage, Keyboard} from "react-native";
+import CreTodo from "./components/cretodo";
+import {Icon, Button, Left, Body, Right} from "native-base";
 
 function Todo(){
     const [todoList, setTodos] = useState([
