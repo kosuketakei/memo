@@ -1,7 +1,7 @@
 # Memo App for iOS Mobile Created in ReactNative
 Memo app is an extremely simple memo-todo app for iPhone.
 You can create and delete memos and todos very easily with simple look.
-However, this app is not normal app like you use in usual.
+However, this app is not a normal app like you use in usual.
 It is specialized to write down memos and tasks to help you memorize them, but not only to keep them on device.
 Data like memo and todo lists is stored in your device. Therefore, with no connections, processes are run very quickly.
 I would not release it on App Store because it is for test, so you see it on the required environment.  
