@@ -10,6 +10,7 @@ I would not release it on App Store because it is for test, so you see it on the
 npm:6.14.5
 Expo:3.22.1
 Xcode:11.3.1
+If you want to see dependencies, you can open see package.json and package-lock.json
 ## Requirements
 __Environment you need to set up is__
 - Installation of Node Package Manager
