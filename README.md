@@ -19,7 +19,7 @@ Expo:3.22.1
 Xcode:11.3.1
 ## Requirements
 __Environment you need to set up is__
-- Installation of Node Package Manager
+- Installation of Node.js
 - Installation of Expo-cli
 - Installation of Xcode
 ## Get started to see how this app works
